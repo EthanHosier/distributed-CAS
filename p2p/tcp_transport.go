@@ -78,7 +78,7 @@ func (t *TCPTransport) startAcceptLoop() {
 func (t *TCPTransport) handleConn(conn net.Conn) {
 	peer := NewTCPPeer(conn, true)
 
-	if err := t.shakeHands(conn); err != nil {
+	if err := t.handshakeFunc(conn); err != nil {
 
 	}
 
